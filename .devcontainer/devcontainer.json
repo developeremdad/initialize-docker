@@ -1,0 +1,12 @@
+{
+  "name": "my-docker-devcontainer",
+  "image": "node:20",
+  "workspaceFolder": "/",
+  "mounts": [
+    "source=/User@DESKTOP-LM0K4SB MINGW64 /d/Docker/docker-initialize, target=/app, type=bind",
+    "source=my-docker-logs, target=/app, type=volume",
+    "target=/app/node_modules, type=volume"
+  ],
+  "runArgs": ["--name", "my-docker-devcontainer", "-p", "5000:5000", "--rm"],
+  "postCreateCommand": "npm install"
+}
